@@ -1,0 +1,19 @@
+---
+layout: post
+title: Research
+date: 
+description: # Add post description (optional)
+img: willow.jpg # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [Oregon State, Undergraduate, Biomedical, Translator]
+---
+Currently, I am working with Dr. Stephen Ramsey on the development of biomedical Translator tools for the National Center for Advancing Translational Sciences (NCATS). Read more about the Translator project on their [website](https://ncats.nih.gov/translator/about), and checkout the RTX repository on my Github.
+
+## Overview
+There is a growing quantity of biomedical data becoming publicly available, but these data are often difficult to utilize in conjunction with each other due to having a wide variety of representational formats. As a part of NCAT's Biomedical Translator program, I and a team consisting of members from OSU, Penn State, and Institute of Systems Biology are developing components of an automated reasoning system to help translational researchers explore existing data in a normalized semantic space. 
+
+![Translator]({{site.baseurl}}/assets/img/translator-graphic.jpg)
+
+My contributions to the project lie mostly within the knowledge graph construction process. A knowledge graph is just a way of representing data; entities like genes and proteins and diseases become nodes, and edges with labels like treats, molecularly interacts with, increases activity of, etc, connect these entities.This data structure then serves as a knowledge base for machine learning algorithms and other reasoning processes, which results in a system that can answer specific biomedical questions and make novel connections between concepts in different domains. You can think of this system sort of like wolfram alpha, but instead of answering math questions, it can answer questions like, “What genes or proteins may be associated with symptoms of a disease X (such as based on drugs that are currently used to treat that disease, etc)?”. This kind of tool helps medical researchers develop and explore hypothesis, come up with novel purposes for existing treatments, and personalize care for patients with rare diseases.
+
+To see my contributions and work on the project as a whole, check out [this repository!](https://github.com/RTXteam/RTX)

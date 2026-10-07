@@ -1,0 +1,68 @@
+<div class="wrap">
+  <header class="hero" id="top">
+    <div class="hero-text">
+      <h1>Lindsey Soper-Kvarfordt</h1>
+      <p class="lede">I'm a software engineer who enjoys learning new domains, working with the people who know them best, and building tools that make complicated work easier, more reliable, or more useful.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">View My Work</a>
+        <a class="btn ghost" href="https://github.com/kvarforl">GitHub</a>
+        <!-- <a class="btn ghost" href="#">Download Resume (PDF)</a> -->
+      </div>
+    </div>
+    <figure class="flow">
+      <div class="flow-panel" role="img" aria-label="Illustration: a tangle of connected shapes on the left resolves into a single clear path on the right">
+        <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+          <g class="tangle">
+            <path d="M70 80 C 130 40, 90 130, 130 150"/>
+            <path d="M70 80 C 20 150, 110 190, 60 230"/>
+            <path d="M200 60 C 140 20, 170 120, 130 150"/>
+            <path d="M200 60 C 270 110, 150 130, 210 200"/>
+            <path d="M130 150 C 160 240, 260 140, 210 200"/>
+            <path d="M60 230 C 90 300, 150 230, 120 300"/>
+            <path d="M130 150 C 60 200, 170 260, 120 300"/>
+            <path d="M210 200 C 270 240, 150 300, 230 320"/>
+            <path d="M60 230 C 130 150, 150 270, 210 200"/>
+            <path d="M120 300 C 160 360, 200 270, 230 320"/>
+            <path d="M230 320 C 290 320, 290 210, 340 210"/>
+            <path d="M210 200 C 270 190, 290 210, 340 210"/>
+            <path d="M200 60 C 300 60, 280 210, 340 210"/>
+          </g>
+          <rect class="n-plum"  x="51"  y="61"  width="38" height="38" rx="9"/>
+          <rect class="n-clay"  x="181" y="41"  width="38" height="38" rx="9"/>
+          <rect class="n-sage"  x="111" y="131" width="38" height="38" rx="9"/>
+          <rect class="n-ochre" x="41"  y="211" width="38" height="38" rx="9"/>
+          <rect class="n-brown" x="191" y="181" width="38" height="38" rx="9"/>
+          <rect class="n-wine"  x="101" y="281" width="38" height="38" rx="9"/>
+          <rect class="n-plum"  x="211" y="301" width="38" height="38" rx="9"/>
+          <path class="after-line" d="M340 210 L 560 210"/>
+          <circle class="n-clay" cx="340" cy="210" r="8"/>
+          <circle class="n-plum" cx="420" cy="210" r="18"/>
+          <circle class="n-sage" cx="495" cy="210" r="18"/>
+          <circle class="n-ochre" cx="560" cy="210" r="26"/>
+        </svg>
+      </div>
+    </figure>
+  </header>
+</div>
+
+<style>
+  .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 3rem 0 5rem; }
+  .hero-text { max-width: 760px; }
+  .hero h1 { font-size: clamp(3rem, 6.4vw, 5.4rem); max-width: 16ch; }
+  .hero .lede { margin-top: 1.6rem; max-width: 50ch; color: var(--muted); font-size: 1.14rem; }
+
+  .flow { margin: 0; justify-self: end; width: min(100%, 520px); }
+  .flow-panel { background: var(--rose); border-radius: 14px; padding: 1.2rem 1rem; }
+  .flow-panel svg { display: block; width: 100%; height: auto; }
+  .tangle { stroke: #45233a; stroke-opacity: .32; stroke-width: 2; fill: none; }
+  .after-line { stroke: #a4472a; stroke-width: 4; stroke-linecap: round; fill: none; stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 1.6s .4s ease-out forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .after-line { animation: none; stroke-dashoffset: 0; } }
+  .n-plum { fill: #45233a; } .n-ochre { fill: #c58f22; } .n-sage { fill: #7f9a80; }
+  .n-clay { fill: #a4472a; } .n-wine { fill: #571c26; } .n-brown { fill: #7a4d27; }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; gap: 3rem; }
+    .flow { justify-self: start; width: min(100%, 460px); }
+  }
+</style>

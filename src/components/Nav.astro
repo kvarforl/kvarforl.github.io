@@ -1,0 +1,42 @@
+---
+// Add or remove nav links here. (Research / Approach were commented out in the original.)
+const links = [
+  { href: '#work', label: 'Selected Work' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+<div class="wrap">
+  <nav class="nav" aria-label="Primary">
+    <a class="mark" href="#top">Portfolio</a>
+    <ul>
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      <li><button class="theme" type="button" id="theme-toggle">Dark Mode</button></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  function label() {
+    if (btn) btn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Light Mode' : 'Dark Mode';
+  }
+  label();
+  btn?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    label();
+  });
+</script>
+
+<style>
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 0; gap: 1rem; flex-wrap: wrap; }
+  .nav .mark { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; }
+  .theme { font: inherit; font-size: 0.9rem; font-weight: 500; color: var(--muted); background: none; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.25rem 0.8rem; cursor: pointer; }
+  .theme:hover { color: var(--ink); border-color: var(--ink); }
+  .nav ul { display: flex; gap: 1.8rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; align-items: center; }
+  .nav ul a { text-decoration: none; font-weight: 500; font-size: 0.96rem; color: var(--muted); padding: 0.25rem 0; border-bottom: 2px solid transparent; }
+  .nav ul a:hover { color: var(--ink); border-color: var(--clay); }
+</style>

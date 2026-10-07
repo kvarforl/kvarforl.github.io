@@ -1,0 +1,30 @@
+---
+const email = 'kvarfordt.lindsey@gmail.com';
+const github = 'https://github.com/kvarforl';
+const year = new Date().getFullYear();
+---
+<div class="strip" aria-hidden="true"></div>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <div class="actions">
+      <a class="btn primary" href={`mailto:${email}`}>Email me</a>
+      <a class="btn ghost" href={github}>GitHub</a>
+      <!-- <a class="btn ghost" href="#">Résumé (PDF)</a> -->
+    </div>
+    <div class="foot">© {year} Lindsey Soper-Kvarfordt</div>
+  </div>
+</footer>
+
+<style>
+  .strip { height: 10px; opacity: .9; background-color: #571c26;
+    background-image: linear-gradient(0deg, transparent 0 30%, #cdb9ca 30% 70%, transparent 70%), linear-gradient(90deg, transparent 0 62%, #cdb9ca 62% 72%, transparent 72%);
+    background-size: 100% 100%, 160px 100%; }
+  .contact { background: var(--plum); color: #f1e6ed; padding: 5rem 0 2.5rem; }
+  .contact h2 { font-size: clamp(2.4rem, 5.2vw, 3.9rem); max-width: 16ch; }
+  .contact .btn.primary { background: var(--ochre); color: #2b2128; }
+  .contact .btn.primary:hover { background: #d6a23a; }
+  .contact .btn.ghost { border-color: rgba(205,185,202,.45); color: var(--lilac); }
+  .contact .btn.ghost:hover { border-color: var(--lilac); }
+  .foot { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid rgba(205,185,202,.25); color: var(--lilac); font-size: 0.93rem; }
+</style>

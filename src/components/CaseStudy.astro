@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  sub: string;
+  decisionTitle: string;
+  color?: string; // any CSS color, e.g. "var(--ochre)"
+}
+const { title, sub, decisionTitle, color = 'var(--plum)' } = Astro.props;
+---
+<article class="case" style={`--c: ${color}`}>
+  <div>
+    <h3>{title}</h3>
+    <p class="sub">{sub}</p>
+  </div>
+  <dl>
+    <div><dt>Problem</dt><dd><slot name="problem" /></dd></div>
+    <div><dt>My Role</dt><dd><slot name="role" /></dd></div>
+    <div class="decision"><dt>{decisionTitle}</dt><dd><slot name="decision" /></dd></div>
+    <div><dt>Results</dt><dd><slot name="results" /></dd></div>
+  </dl>
+</article>
+
+<style>
+  .case { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 2rem; display: grid; grid-template-columns: 0.8fr 1.7fr; gap: 3rem; margin-bottom: 1.5rem; border-left: 6px solid var(--c); }
+  .case h3 { font-size: 1.8rem; }
+  .sub { margin-top: 0.6rem; color: var(--muted); font-size: 0.98rem; }
+  dl { margin: 0; display: grid; gap: 1.2rem; }
+  dt { font-weight: 600; font-size: 0.97rem; }
+  dd { margin: 0.15rem 0 0; color: var(--muted); max-width: 62ch; }
+  dd :global(p + p) { margin-top: 0.8rem; }
+  .decision { background: var(--bg-soft); border-radius: 10px; padding: 1rem 1.2rem; }
+  .decision dd { color: var(--ink); }
+
+  @media (max-width: 960px) {
+    .case { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+  }
+</style>

@@ -1,0 +1,55 @@
+:root {
+  --plum: #45233a;
+  --wine: #571c26;
+  --clay: #a4472a;
+  --ochre: #c58f22;
+  --sage: #9bb09b;
+  --rose: #dbb4b0;
+  --lilac: #cdb9ca;
+  --brown: #7a4d27;
+
+  --bg: #faf5ef;
+  --bg-soft: #f1e7dc;
+  --card: #fffcf8;
+  --ink: #2b1a27;
+  --muted: #6c5a60;
+  --line: #e0d3c6;
+  --link: #a4472a;
+
+  --serif: "EB Garamond", "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+:root[data-theme="dark"] {
+  --bg: #1c101a; --bg-soft: #261623; --card: #2d1c2a;
+  --ink: #f1e8df; --muted: #bdafb4; --line: #4a2f45; --link: #e2a98f;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--ochre); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.08; margin: 0; letter-spacing: 0; }
+p { margin: 0; }
+
+.wrap { width: min(1120px, 100% - 3rem); margin-inline: auto; }
+section { padding: 5rem 0; }
+.section-head { margin-bottom: 2.6rem; max-width: 62ch; }
+.section-head h2 { font-size: clamp(2.2rem, 4vw, 3.1rem); }
+.section-head p { margin-top: 0.8rem; color: var(--muted); }
+
+.btn { display: inline-block; padding: 0.8rem 1.4rem; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.98rem; border: 1.5px solid transparent; }
+.btn.primary { background: var(--plum); color: #f6ede4; }
+.btn.primary:hover { background: var(--wine); }
+.btn.ghost { border-color: var(--line); color: var(--ink); }
+.btn.ghost:hover { border-color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2.2rem; }
+
+@media (max-width: 560px) {
+  section { padding: 3.5rem 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

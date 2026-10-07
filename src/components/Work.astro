@@ -1,0 +1,35 @@
+---
+import CaseStudy from './CaseStudy.astro';
+---
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected Work</h2>
+      <p>A few projects from my time building software for biomedical R&D at BioMérieux. These projects show how I approach unfamiliar domains, collaborate with domain experts, and turn complex workflows into practical software.</p>
+    </div>
+
+    <CaseStudy
+      title="Versioning System for Diagnostic Panel Development"
+      sub="A web application for managing an iterative R&D workflow, developed in close collaboration with the scientists who used it."
+      decisionTitle="Key Decision: Establish a shared vocabulary before encoding the workflow."
+      color="var(--plum)"
+    >
+      <Fragment slot="problem">
+        Diagnostic panel development was tracked in disparate spreadsheets across teams, with inconsistent formats and naming conventions. Hand-edited calculations could be unintentionally changed, and the resulting records did not clearly show how experiments and results evolved without additional context from the person who created them.
+      </Fragment>
+      <Fragment slot="role">
+        <p>I co-designed the application with another team lead and worked directly with users to understand how they approached the work. A significant part of the requirements process was standardizing the vocabulary used to describe the workflow, helping establish shared terminology that could be reflected consistently in the application.</p>
+        <p>I used user meetings, wireframes, and prototypes to work through the workflow and get feedback before committing to a final design. I then helped build and incrementally release the application, starting with versioning and tracking functionality and adding calculation support in a subsequent release.</p>
+      </Fragment>
+      <Fragment slot="decision">
+        Different teams used different names and formats for related concepts. I led the effort to establish consistent terminology as part of requirements gathering, giving us a shared language for discussing the workflow and a more consistent foundation for the application.
+      </Fragment>
+      <Fragment slot="results">
+        The resulting tool provided a more consistent way to track development and support calculations, while giving users a shared consistent workflow and terminology. Iterative releases let us validate the design with users and refine the application as we learned more about their needs.
+      </Fragment>
+    </CaseStudy>
+
+    <!-- To add another project, copy the <CaseStudy> block above and change the
+         props and slot text. Try color="var(--ochre)" or "var(--sage)". -->
+  </div>
+</section>

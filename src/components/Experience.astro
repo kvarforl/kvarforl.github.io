@@ -1,0 +1,56 @@
+---
+// Edit your jobs here. Newest first.
+const jobs = [
+  {
+    dates: 'Feb 2026 to now',
+    title: 'Enterprise Software Engineer II',
+    company: 'Tuck School of Business at Dartmouth',
+    summary: 'Build and maintain software and data systems that integrate modern and legacy platforms, with a focus on testing, documentation, and software quality.',
+  },
+  {
+    dates: 'Jul 2021 to Jan 2026',
+    title: 'Software Engineer II, R&D Support',
+    company: 'bioMérieux',
+    summary: 'Built full-stack software and data systems supporting biomedical R&D, working closely with scientists to turn complex workflows into reliable, usable tools.',
+  },
+  {
+    dates: 'Jun 2020 to Jun 2021',
+    title: 'Project Assistant',
+    company: 'Ramsey Laboratory',
+    summary: 'Built and maintained Snakemake data pipelines integrating biomedical knowledge sources for a research knowledge graph supporting AI/ML drug-target discovery.',
+  },
+];
+const education = 'B.S. Computer Science, minor in Mathematics · Oregon State University · 2021';
+---
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head"><h2>Experience</h2></div>
+    <div class="jobs">
+      {jobs.map((job) => (
+        <div class="job">
+          <time>{job.dates}</time>
+          <div>
+            <h3>{job.title}</h3>
+            <p class="co">{job.company}</p>
+          </div>
+          <p>{job.summary}</p>
+        </div>
+      ))}
+    </div>
+    <p class="edu">{education}</p>
+  </div>
+</section>
+
+<style>
+  .jobs { border-top: 1px solid var(--line); }
+  .job { display: grid; grid-template-columns: 170px 1fr 1.4fr; gap: 2rem; padding: 1.6rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .job time { color: var(--muted); font-weight: 500; font-size: 0.97rem; }
+  .job h3 { font-size: 1.45rem; }
+  .job p { color: var(--muted); }
+  .job .co { color: var(--link); font-weight: 600; font-size: 0.97rem; margin-top: 0.2rem; }
+  .edu { margin-top: 1.4rem; color: var(--muted); font-size: 0.98rem; }
+
+  @media (max-width: 960px) {
+    .job { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>

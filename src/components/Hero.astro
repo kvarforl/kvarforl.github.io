@@ -1,7 +1,7 @@
 <div class="wrap">
   <header class="hero" id="top">
     <div class="hero-text">
-      <h1>Lindsey Soper-Kvarfordt</h1>
+      <h1>LINDSEY SOPER KVARFORDT</h1>
       <p class="lede">I'm a software engineer who enjoys learning new domains, working with the people who know them best, and building tools that make complicated work easier, more reliable, or more useful.</p>
       <div class="actions">
         <a class="btn primary" href="#work">View My Work</a>
@@ -47,8 +47,16 @@
 
 <style>
   .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 3rem 0 5rem; }
-  .hero-text { max-width: 760px; }
-  .hero h1 { font-size: clamp(3rem, 6.4vw, 5.4rem); max-width: 16ch; }
+  .hero-text {
+    max-width: 760px;
+    container-type: inline-size; /* lets children use cqw units */
+  }
+  .hero h1 {
+    font-size: clamp(1.25rem, 10.25cqw, 3.75rem);
+    /* white-space: nowrap; */
+    letter-spacing: 0.1em;
+    max-width: none;
+  }
   .hero .lede { margin-top: 1.6rem; max-width: 50ch; color: var(--muted); font-size: 1.14rem; }
 
   .flow { margin: 0; justify-self: end; width: min(100%, 520px); }
